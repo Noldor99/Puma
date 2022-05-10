@@ -1,0 +1,524 @@
+//&display=swap&subset=cyrillic-ext
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap")
+
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic&display=swap")
+
+$maxWidth: 1600
+@mixin adaptiv-font($pcSize, $mobSize)
+   $addSize: $pcSize - $mobSize
+   $maxWidth: $maxWidth - 320
+   font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}))
+
+%botton
+   padding: 15px 30px
+   font-weight: 500
+   font-size: 18px
+   line-height: 160%
+   color: #FFFFFF
+   background: #EE5514
+   border-radius: 5px
+   border: none
+
+%w1600
+   max-width: 1600px
+   margin: 0 auto
+
+%w230
+   max-width: 1180px
+   margin: 0 auto
+   padding: 0 20px
+
+body
+   font-family: 'Poppins'
+   font-style: normal
+   font-weight: 400
+   @include adaptiv-font(18,12)
+   color: #1A0A03
+
+//header start
+.intro
+   min-width: 80vw
+   min-height: 650px
+   background: linear-gradient(90deg, #EE5514 1.14%, rgba(238, 85, 20, 0) 133.88%)
+   opacity: 0.1
+   position: absolute
+   top: 0
+   left: 0
+   z-index: 2
+   border-bottom-right-radius: 600px
+.header
+   width: 100%
+   background: white
+   position: absolute
+   top: 0
+   left: 0
+   padding-bottom: 15px
+   position: relative
+   z-index: 1
+
+   &__wrap
+      @extend %w230
+      display: flex
+      align-items: center
+      padding-top: 40px
+      position: relative
+      z-index: 3
+   &__menu
+      flex: 0 1 430px
+   &__button
+      flex: 0 1 614px
+      display: flex
+      justify-content: flex-end
+      button
+         @extend %botton
+.menu
+   display: flex
+   justify-content: flex-end
+   &__list
+      display: flex
+      column-gap: 40px
+      padding-left: 20px
+   &__link
+      text-decoration: none
+      @include adaptiv-font(16,12)
+      line-height: 160%
+      color: #1A0A03
+      opacity: 0.7
+@media(max-width: 650px)
+   .header__button
+      display: none
+//header end
+//life start
+.life
+
+   &__wrap
+      display: flex
+      align-items: center
+      @extend %w230
+      padding-top: 131px
+   &__content
+      flex: 0 1 37%
+   &__img-shoes
+      flex: 0 1 57%
+   &__arrow-black
+      flex: 0 1 109px
+.text-block
+
+   width: 360px
+   &__title
+      font-family: 'Source Serif Pro'
+      font-style: normal
+      font-weight: 600
+      line-height: 120%
+      padding-bottom: 35px
+      @include adaptiv-font(61,32)
+      span
+         color: #EE5514
+   &__parag
+      font-size: 16px
+      line-height: 160%
+      color: #1A0A03
+      opacity: 0.7
+      width: 326px
+
+.img-shoes
+   display: flex
+   justify-content: flex-end
+   &__read
+      max-width: 100%
+      display: block
+      position: relative
+      background: url(../img/svg/Frame33.svg) no-repeat right
+      background-size: contain
+.black-arrow
+   display: flex
+   justify-content: flex-end
+   &__all
+      z-index: 1
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 70px
+      height: 70px
+      background: rgba(238, 85, 20, 0.1)
+
+      border-radius: 50%
+@media(max-width: 800px)
+   .life__wrap
+      flex-direction: column
+   .life__block-text
+      width: inherit
+      padding-bottom: 20px
+   .life__arrow-black
+      flex-direction: column
+//life end
+//desire start
+
+.desire
+
+   &__wrap
+      max-width: 1280px
+      margin: 0 auto
+      display: flex
+      align-items: center
+      padding: 0 20px
+      padding-top: 140px
+
+   &__content
+      flex: 0 1 31.5%
+      display: flex
+      justify-content: flex-end
+   &__body
+
+   &__video
+      flex: 0 1 68.5%
+      display: flex
+      justify-content: flex-end
+
+.body-sesire
+   width: 340px
+   &__title
+      font-family: 'Source Serif Pro'
+      font-style: normal
+      font-weight: 600
+
+      @include adaptiv-font(20,14)
+      line-height: 150%
+      letter-spacing: 0.05em
+      color: #EE5514
+   &__parag1
+      font-family: 'Source Serif Pro'
+      font-weight: 600
+      font-size: 44px
+      @include adaptiv-font(44,20)
+      line-height: 130%
+   &__parag2
+      font-family: 'Poppins'
+      font-weight: 400
+      @include adaptiv-font(16,12)
+      line-height: 160%
+      color: #1A0A03
+      opacity: 0.7
+      width: 326px
+
+.video
+   &__wrap
+      flex: 0 1 605px
+      margin-left: 25px
+      position: relative
+   &__item
+      padding-top: 56.25%
+   &__element
+      position: absolute
+      display: block
+      content: ''
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+@media(max-width:800px)
+   .desire__wrap
+      display: block
+   .desire__content
+      justify-content: center
+   .desire__body
+      width: inherit
+      padding-bottom: 20px
+   .video__wrap
+      margin-left: inherit
+//desire end
+//feature start
+.feature
+
+   &__wrap
+      display: flex
+      flex-wrap: wrap
+      @extend %w230
+      padding-top: 150px
+      padding-bottom: 150px
+   &__block-text-2
+      flex: 0 1 100%
+      display: flex
+      flex-direction: column
+      align-items: center
+   &__cards
+      display: flex
+      flex: 0 1 100%
+
+   &__column
+      flex: 0 1 33.33%
+      padding: 0 15px
+
+.text-block-2
+
+   &__title
+      font-weight: 600
+      font-size: 20px
+      @include adaptiv-font(20,14)
+      line-height: 150%
+      text-align: center
+      letter-spacing: 0.05em
+      color: #EE5514
+      padding-bottom: 10px
+   &__parag
+      font-family: 'Source Serif Pro'
+      font-style: normal
+      font-weight: 600
+      @include adaptiv-font(44,20)
+      padding-bottom: 60px
+.card-feature
+   display: flex
+   flex-direction: column
+   align-items: center
+   background: #FFFFFF
+   box-shadow: 0px 1px 30px rgba(26, 10, 3, 0.05)
+   border-radius: 10px
+   &__icon
+      display: flex
+      align-items: center
+      justify-content: center
+      background: rgba(18, 101, 225, 0.251)
+      width: 140px
+      height: 140px
+      border-radius: 50%
+      margin-top: 56px
+      margin-bottom: 38px
+   &__title
+      font-weight: 600
+      @include adaptiv-font(22,14)
+      line-height: 150%
+      padding-bottom: 10px
+   &__parag
+      font-size: 14px
+      line-height: 160%
+      text-align: center
+      color: #1A0A03
+      width: 240px
+      opacity: 0.7
+      padding-bottom: 20px
+   &__button
+      font-weight: 500
+      @include adaptiv-font(16,12)
+      line-height: 160%
+      text-align: center
+      color: #EE5514
+      position: relative
+      padding-bottom: 56px
+      &::after,
+      &::before
+         display: block
+         content: ''
+         position: absolute
+         width: 1px
+         height: 4px
+         right: -8px
+         background-color: black
+      &::after
+         top: 12px
+         transform: rotate(-45deg)
+      &::before
+         top: 14px
+         transform: rotate(45deg)
+
+@media(max-width: 900px)
+   .feature__cards
+      display: block
+   .feature__card
+      padding-bottom: 20px
+
+//feature end
+//gallary start
+.gallary__arrow
+   display: flex
+   flex: 0 1 100%
+   justify-content: flex-end
+.arrow-gallary__arr
+   display: flex
+   justify-content: space-between
+   flex: 0 0 150px
+.arrow-gallary__left
+   display: flex
+   align-items: center
+   justify-content: center
+   width: 50px
+   height: 50px
+   border-radius: 50%
+   background: rgba(238, 85, 20, 0.1)
+   transform: rotate(180deg)
+.arrow-gallary__right
+   display: flex
+   align-items: center
+   justify-content: center
+   width: 50px
+   height: 50px
+   border-radius: 50%
+   background: rgba(238, 85, 20, 0.1)
+
+.wrapper
+   max-width: 1175px
+   margin: 0 auto
+   overflow: hidden
+.image-slider__slide
+   display: flex
+   justify-content: center
+
+//gallary end
+//testi start
+.testi
+
+   &__wrap
+      @extend %w230
+      display: flex
+      align-items: center
+      padding-bottom: 80px
+
+   &__title
+      flex: 0 0 100%
+      display: flex
+      justify-content: center
+      padding-bottom: 80px
+   &__img
+      flex: 0 1 60%
+   &__block
+
+      padding-left: 15px
+
+   &__content
+
+.img-testi__test
+   padding: 0px 0px 0px 30px
+   flex: 1 1 auto
+   min-width: 0
+
+.title-testi
+
+   &__title
+      font-family: 'Source Serif Pro'
+      font-style: normal
+      font-weight: 600
+      font-size: 44px
+      @include adaptiv-font(44,20)
+      line-height: 130%
+.img-testi
+
+   &__img
+      max-width: 100%
+
+.body-testi
+
+   *:last-child
+      padding-bottom: 0
+
+   &__img
+      padding-bottom: 30px
+      overflow: hidden
+      img
+         width: 100px
+         height: 100px
+         border-radius: 50%
+         display: block
+         max-width: 100%
+         border: solid 3px #eb6868
+   &__icon
+      padding-bottom: 15px
+   &__title
+      font-family: 'Source Serif Pro'
+      font-style: normal
+      font-weight: 600
+      font-size: 22px
+      @include adaptiv-font(22,14)
+      line-height: 150%
+      padding-bottom: 20px
+   &__parag
+      font-style: italic
+      font-weight: 500
+      font-size: 14px
+      @include adaptiv-font(14,12)
+      line-height: 160%
+      padding-bottom: 25px
+      width: 390px
+@media(max-width:650px)
+   .testi__wrap
+      flex-direction: column-reverse
+//testi end
+//sign start
+
+.sign
+
+   &__wrap
+      @extend %w230
+      display: flex
+      padding-bottom: 250px
+   &__img
+      flex: 0 1 478px
+   &__container
+      flex: 0 1 661px
+   &__content
+      padding: 63px
+      background: rgba(129, 168, 218, 0.1)
+      border-radius: 0px 10px 10px 0px
+   &__body
+.img-sign
+   position: relative
+   &__img
+      position: absolute
+      overflow: hidden
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+.body-sign
+
+   &__title
+      font-family: 'Source Serif Pro'
+      font-style: normal
+      font-weight: 600
+      font-size: 31px
+      @include adaptiv-font(31,16)
+      line-height: 140%
+      padding-bottom: 20px
+   &__parag
+      font-size: 18px
+      @include adaptiv-font(18,14)
+      line-height: 160%
+      color: #1A0A03
+      opacity: 0.7
+      padding-bottom: 40px
+.email-form
+
+   &__wrap
+
+   &__info
+      display: flex
+   &__field
+      max-width: 409px
+      border: 1px solid rgba(0, 0, 0, 0.2)
+      border-radius: 5px 0 0 5px
+      &::placeholder
+         padding-left: 30px
+         color: #1A0A03
+         opacity: 0.5
+         @include adaptiv-font(14,10)
+         line-height: 150%
+      &:hover,
+      &:focus,
+      &:active
+         border: 1px solid rgba(0, 0, 0, 1)
+         background-color: white
+   &__submit
+      padding: 15px 40px
+      font-weight: 500
+      @include adaptiv-font(14,10)
+      line-height: 150%
+      text-align: center
+      letter-spacing: 0.03em
+      color: #FFFFFF
+      background: #EE5514
+      border-radius: 0px 5px 5px 0px
+      border: none
+
+@media(max-width: 800px)
+   .sign__wrap
+      flex-direction: column
+//sign end
